@@ -541,10 +541,14 @@ namespace BitlyAPI
 
     #endregion
 
-#region LinkHistoryItem
+    #region LinkHistoryItem
 
+    /// <summary>
+    /// http://dev.bitly.com/user_info.html#v3_user_link_history
+    /// </summary>
     public class BitlyLinkHistoryItem
     {
+        public string keyword_link { get; set; }//undocumented
         public string link { get; set; }
         public string aggregate_link { get; set; }
         public string long_url { get; set; }
