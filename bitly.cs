@@ -402,6 +402,17 @@ namespace BitlyAPI
             return GetResponseDict("user/link_history", parameters);
         }
 
+        /// <summary>
+        /// Retrieves Click Metrics for a shortened Link
+        /// </summary>
+        /// <param name="link"></param>
+        /// <returns></returns>
+        public BitlyResponse LinkMetrics(string link = null)
+        {
+            var parameters = new Dictionary<string, string> { { "link", link } };
+            return GetResponseDict("link/clicks", parameters);
+        }
+
     }
 
 
@@ -458,6 +469,13 @@ namespace BitlyAPI
         /// domain_options is domain_preference_options in the documentation, the official documentation is wrong
         /// </summary>
         public List<string> domain_options { get; set; }
+
+        //LinkMetrics
+        public int link_clicks { get; set; }
+        public string tz_offset { get; set; }
+        public string unit { get; set; }
+        public long? unit_reference_ts { get; set; }
+        public int units { get; set; }
     }
 
     #region BityShareAccount
