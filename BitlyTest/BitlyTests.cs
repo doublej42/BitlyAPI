@@ -22,14 +22,15 @@ namespace BitlyAPI.Tests
         [TestMethod()]
         public void BitlyTest()
         {
-            var bitly = new Bitly(TestContext.Properties["apikey"].ToString());
+
+            var bitly = new Bitly("1dcc1d6fa0d41309f410f3943c244d87b9995fdb");
             Assert.IsNotNull(bitly);
         }
 
         [TestMethod()]
         public void ExpandTest()
         {
-            var bitly = new Bitly(TestContext.Properties["apikey"].ToString());
+            var bitly = new Bitly("1dcc1d6fa0d41309f410f3943c244d87b9995fdb");
             var result = bitly.Expand("http://s.phansoft.ca/googletestphan");
             Assert.IsTrue(result.data.expand.Any());//found atleast one url
             Assert.AreEqual("https://www.google.ca/",result.data.expand.First().long_url);//it was the expected url
@@ -86,7 +87,7 @@ namespace BitlyAPI.Tests
         [TestMethod()]
         public void UserLinkHistoryTest()
         {
-            var bitly = new Bitly(TestContext.Properties["apikey"].ToString());
+            var bitly = new Bitly("1dcc1d6fa0d41309f410f3943c244d87b9995fdb");
             var result = bitly.UserLinkHistory();
             Assert.IsTrue(result.data.link_history.Any());
             var resultSample = result.data.link_history.First(lh => lh.long_url == "https://www.google.ca/");

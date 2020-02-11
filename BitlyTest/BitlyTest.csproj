@@ -17,6 +17,9 @@
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunSettingsFilePath>$(SolutionDir)\\BitlyTest\PrivateData.runsettings</RunSettingsFilePath>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -58,9 +61,6 @@
       <Project>{70a240fa-d46c-4b64-ba03-e3d44218311c}</Project>
       <Name>BitlyAPI</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="PrivateData.runsettings" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
