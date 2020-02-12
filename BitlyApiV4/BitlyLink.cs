@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace BitlyAPI
 {
-    public class BitlyShortenResponse
+    public class BitlyLink
     {
         public bool Archived { get; set; }
         public List<string> Tags { get; set; }
@@ -16,7 +16,9 @@ namespace BitlyAPI
         public string CreatedBy { get; set; }
         [JsonProperty("long_url")]
         public string LongUrl { get; set; }
+        [JsonProperty("client_id")]
         public string ClientId { get; set; }
+        [JsonProperty("custom_bitlinks")]
         public List<string> CustomBitlinks { get; set; }
         public string Link { get; set; }
         public string Id { get; set; }
