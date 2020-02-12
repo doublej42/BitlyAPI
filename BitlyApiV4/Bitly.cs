@@ -81,7 +81,8 @@ namespace BitlyAPI
 
         public async Task<IEnumerable<BitlyGroup>> GetGroups()
         {
-            return await GetResponse<IEnumerable<BitlyGroup>>("groups");
+            var response = await GetResponse<BitlyGroupResponse>("groups");
+            return response.Groups;
         }
     }
 }
