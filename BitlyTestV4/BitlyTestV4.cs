@@ -11,7 +11,7 @@ namespace BitlyTestV4
     public class BitlyTestV4
     {
         //TODO remove this access token from my account.
-        private static readonly string _genericAccessToken = "";
+        private static readonly string _genericAccessToken = "97d61af824f19e03bb69ed3cc470cd1afec8602a";
 
         [TestMethod]
         public void GetGroups()
@@ -48,10 +48,11 @@ namespace BitlyTestV4
             var bitly = new Bitly(_genericAccessToken);
             Assert.IsNotNull(bitly);
             var now = DateTime.Now;
-            var testUrl = "https://www.google.ca/?q=" + now.ToLongDateString();
+            var testUrl = "https://www.google.ca/?q=" + now.ToShortDateString() +  now.ToLongTimeString();
             var linkResponse = await bitly.PostShorten(testUrl);
-            Thread.Sleep(new TimeSpan(0,0,1,0));
-            var newest = await bitly.GetBitlinksByGroup(createdAfter: now.AddMinutes(-10));
+            //Bit won't show links that are ver very new
+            Thread.Sleep(new TimeSpan(0,0,0,1));
+            var newest = await bitly.GetBitlinksByGroup(createdAfter: now);
             Assert.IsTrue(newest.Links.Any(l => l.LongUrl == testUrl));
         }
 
