@@ -10,7 +10,6 @@ namespace BitlyTestV4
     [TestClass]
     public class BitlyTestV4
     {
-        //TODO remove this access token from my account.
         private static readonly string _genericAccessToken = "97d61af824f19e03bb69ed3cc470cd1afec8602a";
 
         [TestMethod]

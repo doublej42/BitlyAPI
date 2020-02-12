@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitlyAPI", "BitlyAPI.csproj", "{70A240FA-D46C-4B64-BA03-E3D44218311C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitlyTestV4", "BitlyTestV4\BitlyTestV4.csproj", "{544F674C-AD0F-40C3-AA00-9CE4AE34D4CC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8D908BC0-C84D-431F-BFFB-C660D7B80267}"
@@ -21,17 +19,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{70A240FA-D46C-4B64-BA03-E3D44218311C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70A240FA-D46C-4B64-BA03-E3D44218311C}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{70A240FA-D46C-4B64-BA03-E3D44218311C}.Debug|x64.Build.0 = Debug|Any CPU
-		{70A240FA-D46C-4B64-BA03-E3D44218311C}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{70A240FA-D46C-4B64-BA03-E3D44218311C}.Debug|x86.Build.0 = Debug|Any CPU
-		{70A240FA-D46C-4B64-BA03-E3D44218311C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70A240FA-D46C-4B64-BA03-E3D44218311C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70A240FA-D46C-4B64-BA03-E3D44218311C}.Release|x64.ActiveCfg = Release|Any CPU
-		{70A240FA-D46C-4B64-BA03-E3D44218311C}.Release|x64.Build.0 = Release|Any CPU
-		{70A240FA-D46C-4B64-BA03-E3D44218311C}.Release|x86.ActiveCfg = Release|Any CPU
-		{70A240FA-D46C-4B64-BA03-E3D44218311C}.Release|x86.Build.0 = Release|Any CPU
 		{544F674C-AD0F-40C3-AA00-9CE4AE34D4CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{544F674C-AD0F-40C3-AA00-9CE4AE34D4CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{544F674C-AD0F-40C3-AA00-9CE4AE34D4CC}.Debug|x64.ActiveCfg = Debug|Any CPU
