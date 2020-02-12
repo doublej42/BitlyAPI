@@ -1,23 +1,20 @@
 # BitlyAPI
-A C# implementation of the Bit.ly Api
+A C# implementation of the Bit.ly Api V4
 
-All methods are documented and have similar names to the ones in the docs with the / removed.
-Before you can use the library you will need to  generate an api key at  https://bitly.com/a/oauth_apps
-in web.config <add key="bitlyAccess_Token" value="YOUR_API_KEY" />
+All methods are documented and have similar names to the ones in the docs.
+
+V4 is a full rewrite.
+
+Before you can use the library you will need to  generate an Generic Access Token at  https://bitly.is/accesstoken
+
+See the bitly documentation at https://dev.bitly.com/v4
 
 ```
-//Example usage:
- public ActionResult Index(int page = 0)
-        {
-            Bitly Bt = new Bitly();// or specify the key as a parameter
-            var model = new VmAdmin
-                {
-                    UserInfo = Bt.UserInfo(),
-                    UserHistory = Bt.UserLinkHistory(offset: page*50),
-                    page = page
-                };
-            return View(model);
-        }
+var bitly = new Bitly(_genericAccessToken);
+var linkResponse = await bitly.PostShorten("https://www.google.ca/");
+var newLink = linkResponse.Link;
 ```
 
-Many fields in response will be null as they are used for other calls.
+See unit tests for more examples.
+
+If you need other methods added submit an issue.

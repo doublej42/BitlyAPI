@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitlyTestV4", "BitlyTestV4\BitlyTestV4.csproj", "{544F674C-AD0F-40C3-AA00-9CE4AE34D4CC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8D908BC0-C84D-431F-BFFB-C660D7B80267}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitlyApiV4", "BitlyApiV4\BitlyApiV4.csproj", "{88942DA5-3A21-4B30-93AF-DFAC5DC5FC9A}"
 EndProject
@@ -26,7 +29,6 @@ Global
 		{544F674C-AD0F-40C3-AA00-9CE4AE34D4CC}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{544F674C-AD0F-40C3-AA00-9CE4AE34D4CC}.Debug|x86.Build.0 = Debug|Any CPU
 		{544F674C-AD0F-40C3-AA00-9CE4AE34D4CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{544F674C-AD0F-40C3-AA00-9CE4AE34D4CC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{544F674C-AD0F-40C3-AA00-9CE4AE34D4CC}.Release|x64.ActiveCfg = Release|Any CPU
 		{544F674C-AD0F-40C3-AA00-9CE4AE34D4CC}.Release|x64.Build.0 = Release|Any CPU
 		{544F674C-AD0F-40C3-AA00-9CE4AE34D4CC}.Release|x86.ActiveCfg = Release|Any CPU

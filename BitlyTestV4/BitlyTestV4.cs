@@ -10,7 +10,7 @@ namespace BitlyTestV4
     [TestClass]
     public class BitlyTestV4
     {
-        private static readonly string _genericAccessToken = "97d61af824f19e03bb69ed3cc470cd1afec8602a";
+        private static readonly string _genericAccessToken = "";
 
         [TestMethod]
         public void GetGroups()
@@ -49,8 +49,8 @@ namespace BitlyTestV4
             var now = DateTime.Now;
             var testUrl = "https://www.google.ca/?q=" + now.ToShortDateString() +  now.ToLongTimeString();
             var linkResponse = await bitly.PostShorten(testUrl);
-            //Bit won't show links that are ver very new
-            Thread.Sleep(new TimeSpan(0,0,0,1));
+            //Bitly won't show links that are very new
+            Thread.Sleep(new TimeSpan(0,0,0,30));
             var newest = await bitly.GetBitlinksByGroup(createdAfter: now);
             Assert.IsTrue(newest.Links.Any(l => l.LongUrl == testUrl));
         }
