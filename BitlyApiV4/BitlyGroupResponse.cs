@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BitlyAPI
 {
-    class BitlyGroupResponse
+    public class BitlyGroupResponse
     {
         public IEnumerable<BitlyGroup> Groups { get; set; }
     }

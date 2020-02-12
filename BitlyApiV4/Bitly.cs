@@ -65,7 +65,8 @@ namespace BitlyAPI
                     }
                     else
                     {
-                        request.Content = new FormUrlEncodedContent(parameters);
+                        //request.Content = new FormUrlEncodedContent(parameters);
+                        request.Content = new StringContent(JsonConvert.SerializeObject(parameters),Encoding.UTF8, "application/json");
                     }
                 }
                 request.Headers.Authorization = new AuthenticationHeaderValue(BearerAuthScheme, _accessToken);
@@ -84,5 +85,45 @@ namespace BitlyAPI
             var response = await GetResponse<BitlyGroupResponse>("groups");
             return response.Groups;
         }
+
+        public async Task<String> PostShortenLink(string longUrl, string groupGuid = null, string domain = null)
+        {
+            var result =  await PostShorten(longUrl, groupGuid,   domain);
+            return result.Link;
+        }
+
+        public async Task<BitlyShortenResponse> PostShorten(string longUrl, string groupGuid = null, string domain = null)
+        {
+            if (groupGuid == null)
+            {
+                var groups = await GetGroups();
+                var groupsArray = groups as BitlyGroup[] ?? groups.ToArray();
+                if (!groupsArray.Any())
+                {
+                    throw new Exception("Unable to find groups for user");
+                }
+
+                var group = groupsArray.First();
+                groupGuid = group.Guid;
+                if (domain == null && group.Bsds.Any())
+                {
+                    domain = group.Bsds.First();
+                }
+            }
+
+            var parameters = new Dictionary<string, string> {{"group_guid", groupGuid}, {"long_url", longUrl}};
+            if (domain != null)
+            {
+                parameters.Add("domain", domain);
+            }
+            
+            
+            var response = await GetResponse<BitlyShortenResponse>("shorten", parameters,HttpMethod.Post);
+            return response;
+        }
+
+        //TODO:
+        //  https://dev.bitly.com/v4/#operation/getBitlinksByGroup
     }
 }
+
