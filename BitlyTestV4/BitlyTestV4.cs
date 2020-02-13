@@ -55,5 +55,19 @@ namespace BitlyTestV4
             Assert.IsTrue(newest.Links.Any(l => l.LongUrl == testUrl));
         }
 
+
+        [TestMethod]
+        public async Task GetBitlinksByGroupSize()
+        {
+            var bitly = new Bitly(_genericAccessToken);
+            Assert.IsNotNull(bitly);
+            var firstPage = await bitly.GetBitlinksByGroup(size: 1);
+            Assert.IsTrue(firstPage.Links.Any());
+            Assert.IsTrue(firstPage.Pagination.Total > firstPage.Pagination.Size);
+            var secondPage = await bitly.GetBitlinksByGroup(size: 1, page:2);
+            Assert.AreEqual(2,secondPage.Pagination.Page);
+            Assert.AreNotEqual(firstPage.Links.First().Link,secondPage.Links.First().Link);
+
+        }
     }
 }
