@@ -10,6 +10,7 @@ namespace BitlyTestV4
     [TestClass]
     public class BitlyTestV4
     {
+        //Get from https://bitly.is/accesstoken
         private static readonly string _genericAccessToken = "";
 
         [TestMethod]
