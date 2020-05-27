@@ -91,36 +91,21 @@ namespace BitlyAPI
 
         public async Task<BitlyLink> PostShorten(string longUrl, string groupGuid = null, string domain = null)
         {
-            if (groupGuid == null)
-            {
-                var groups = await GetGroups();
-                var groupsArray = groups as BitlyGroup[] ?? groups.ToArray();
-                if (!groupsArray.Any())
-                {
-                    throw new Exception("Unable to find groups for user");
-                }
+            var parameters = new Dictionary<string, string> {{"long_url", longUrl}};
 
-                var group = groupsArray.First();
-                groupGuid = group.Guid;
-                if (domain == null && group.Bsds.Any())
-                {
-                    domain = group.Bsds.First();
-                }
+            if (groupGuid != null)
+            {
+                parameters.Add("group_guid", groupGuid);
             }
 
-            var parameters = new Dictionary<string, string> {{"group_guid", groupGuid}, {"long_url", longUrl}};
             if (domain != null)
             {
                 parameters.Add("domain", domain);
             }
             
-            
             var response = await GetResponse<BitlyLink>("shorten", parameters,HttpMethod.Post);
             return response;
         }
-
-        
-
 
         public async Task<BitlyBitlinksResponse> GetBitlinksByGroup(
             string groupGuid = null, 
