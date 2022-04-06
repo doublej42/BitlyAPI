@@ -7,7 +7,7 @@ V4 is a full rewrite.
 
 Before you can use the library you will need to  generate an Generic Access Token at  https://bitly.is/accesstoken
 
-See the bitly documentation at https://dev.bitly.com/v4
+See the bitly documentation at https://dev.bitly.com/
 
 ```
 var bitly = new Bitly(_genericAccessToken);
